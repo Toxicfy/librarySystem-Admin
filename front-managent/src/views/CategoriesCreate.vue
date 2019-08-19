@@ -3,12 +3,11 @@
   <div id="categories-create">
     <h1>创建图书分类</h1>
     <div class="form-container">
-        <el-form @submit.native.prevent="saveData" label-width="100px">
-          <el-form-item label="分类名称">
+        <el-form @submit.native.prevent="saveData('categoryForm')" label-width="100px" ref="categoryForm" :model="categoryData">
+          <el-form-item label="分类名称" required prop="name">
             <el-input v-model="categoryData.name"></el-input>
           </el-form-item>
           <el-form-item label="分类封面">
-            <!-- :before-upload="beforeAvatarUpload">-->
             <el-upload class="avatar-uploader" :show-file-list="false"
                     :action="`${$http.defaults.baseURL}/uploadImg`"
                     :on-success="handleAvatarSuccess">
@@ -38,15 +37,29 @@ export default {
     }
   },
   methods: {
-    saveData () {
-      this.$http.post('/createCategories', this.categoryData)
-        .then(res => {
-          console.log(res.data)
-        })
+    // 保存数据
+    saveData (formName) {
+      // 验证数据
+      this.$refs[formName].validate(res => {
+        if (res) {
+          this.$http.post('/createCategories', this.categoryData)
+            .then(res => {
+              if (res.data) {
+                this.$message({
+                  type: 'success',
+                  message: '添加成功！'
+                })
+                this.$refs['categoryForm'].resetFields()
+              }
+            })
+        }
+      })
     },
+    // 图片上传完成
     handleAvatarSuccess (res, file) {
-      console.log(res)
-      // this.categoryData.coverImg = URL.createObjectURL(file.raw)
+      if (res.url) {
+        this.categoryData.coverImg = res.url
+      }
     }
   }
 }
