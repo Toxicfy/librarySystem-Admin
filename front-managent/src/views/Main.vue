@@ -2,7 +2,7 @@
   <el-container>
     <!-- 侧边栏 -->
     <el-aside>
-      <el-menu router :default-openeds="['内容管理']" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
+      <el-menu router :default-active="$route.path" :default-openeds="['内容管理']" background-color="#10131e" text-color="#cfd0d3" active-text-color="#fff">
         <el-submenu index="内容管理">
           <template slot="title"><i class="el-icon-menu"></i><span>内容管理</span></template>
           <el-menu-item-group>
@@ -15,7 +15,10 @@
     </el-aside>
     <!-- 主体部分 -->
     <el-main>
-      <router-view></router-view>
+      <!--  header  -->
+      <div class="main-header"></div>
+      <!--  路由区域  -->
+      <router-view class="main-content"></router-view>
     </el-main>
   </el-container>
 </template>
@@ -32,10 +35,36 @@ export default {
 <style lang="scss" scoped>
   .el-container{
     .el-aside{
+      width: 240px !important;
       height: 100vh;
       .el-menu{
         height: 100%;
       }
+    }
+  }
+  /*设置单个选中样式*/
+  .el-menu-item-group{
+    .el-menu-item{
+      text-align: left;
+      margin: 0 10%;
+      padding-left: 24px;
+      border-radius: 8px;
+    }
+    .is-active{
+      background: #0364ff !important;
+    }
+  }
+
+  .el-main{
+    padding: 0;
+    background: #f9f9fb;
+    .main-header{
+      background: #ffffff;
+      height: 60px;
+      box-shadow: 0 0 7px rgba(0,0,0,0.2);
+    }
+    .main-content{
+      padding: 20px;
     }
   }
 </style>

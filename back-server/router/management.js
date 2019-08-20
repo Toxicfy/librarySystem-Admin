@@ -17,7 +17,11 @@ router.post('/api/createCategories', koaBody(), async ctx => {
   let postData = ctx.request.body
   // 数据插入
   const model = await Category.create(postData)
-  ctx.body = model
+  ctx.body = {
+    data: model,
+    err_code: 0,
+    msg: '创建图书分类成功'
+  }
 })
 
 // 通用上传图片
@@ -27,7 +31,8 @@ router.post('/api/uploadImg', koaBody(koaBodyConfig), async ctx => {
   const url = `http://localhost:3000/upload/${name}`
   console.log(fileInfo.path.split('/').pop())
   ctx.body = JSON.stringify({
-    err_num: 0,
+    err_code: 0,
+    msg: '上传图片成功',
     url,
     fileInfo
   })
@@ -35,8 +40,22 @@ router.post('/api/uploadImg', koaBody(koaBodyConfig), async ctx => {
 
 // 获取图书分类列表
 router.get('/api/getCategories', async ctx => {
-  let model = await Category.find()
-  ctx.body = model
+  let model = await Category.find().sort({ _id: -1 })
+  ctx.body = {
+    err_code: 0,
+    msg: '获取成功',
+    data: model
+  }
 })
 
+// delCategory
+router.post('/api/delCategory', koaBody(), async ctx => {
+  const _id = ctx.request.body.id
+  const model = await Category.findOneAndRemove({ _id })
+  ctx.body = {
+    err_code: 0,
+    msg: '删除数据成功',
+    data: JSON.stringify(model)
+  }
+})
 module.exports = router

@@ -1,7 +1,7 @@
 <!--CategoriesCreate.vue-->
 <template>
   <div id="categories-create">
-    <h1>创建图书分类</h1>
+    <h2 class="title">新建图书分类</h2>
     <div class="form-container">
         <el-form @submit.native.prevent="saveData('categoryForm')" label-width="100px" ref="categoryForm" :model="categoryData" :rules="rules">
           <el-form-item label="分类名称" prop="name">
@@ -62,7 +62,6 @@ export default {
   methods: {
     // 保存数据
     saveData (formName) {
-      // console.log(this.$refs[formName].validate(res => res))
       this.$refs[formName].validate(res => {
         console.log(res)
         if (res) {
@@ -71,7 +70,7 @@ export default {
               if (res.data) {
                 this.$message({
                   type: 'success',
-                  message: '添加成功！'
+                  message: res.data.msg
                 })
                 this.categoryData = this.originalValue.categoryData
                 this.$refs[formName].resetFields()
@@ -93,6 +92,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .title{
+    text-decoration: underline;
+  }
   .form-container{
     .el-form{
       width: 60%;
