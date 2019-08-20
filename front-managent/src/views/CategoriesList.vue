@@ -10,6 +10,16 @@ export default {
   name: 'categoriesList',
   data () {
     return {}
+  },
+  mounted () {
+    this.getCategories()
+  },
+  methods: {
+    getCategories () {
+      this.$http('/getCategories').then(res => {
+        console.log(res)
+      })
+    }
   }
 }
 </script>

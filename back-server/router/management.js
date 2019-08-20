@@ -15,11 +15,9 @@ const Category = require('../models/category')
 // 创建图书分类
 router.post('/api/createCategories', koaBody(), async ctx => {
   let postData = ctx.request.body
-  console.log(ctx.request)
-  // ctx.body = postData
-  // 链接数据库
-  const model = await Category.create(postData);  
-  ctx.body = model;
+  // 数据插入
+  const model = await Category.create(postData)
+  ctx.body = model
 })
 
 // 通用上传图片
@@ -33,6 +31,12 @@ router.post('/api/uploadImg', koaBody(koaBodyConfig), async ctx => {
     url,
     fileInfo
   })
+})
+
+// 获取图书分类列表
+router.get('/api/getCategories', async ctx => {
+  let model = await Category.find()
+  ctx.body = model
 })
 
 module.exports = router

@@ -3,15 +3,15 @@
   <div id="categories-create">
     <h1>创建图书分类</h1>
     <div class="form-container">
-        <el-form @submit.native.prevent="saveData('categoryForm')" label-width="100px" ref="categoryForm" :model="categoryData">
-          <el-form-item label="分类名称" required prop="name">
+        <el-form @submit.native.prevent="saveData('categoryForm')" label-width="100px" ref="categoryForm" :model="categoryData" :rules="rules">
+          <el-form-item label="分类名称" prop="name">
             <el-input v-model="categoryData.name"></el-input>
           </el-form-item>
-          <el-form-item label="分类封面">
+          <el-form-item label="分类封面" prop="coverImg">
             <el-upload class="avatar-uploader" :show-file-list="false"
                     :action="`${$http.defaults.baseURL}/uploadImg`"
                     :on-success="handleAvatarSuccess">
-              <img v-if="categoryData.coverImg" :src="categoryData.coverImg" class="avatar">
+              <img v-if="categoryData.coverImg" :src="categoryData.coverImg" class="avatar" alt>
               <i v-else class="el-icon-plus avatar-uploader-icon"></i>
             </el-upload>
           </el-form-item>
@@ -28,19 +28,43 @@
 export default {
   name: 'categoriesCreate',
   data () {
+    const nameValidate = (rule, value, callback) => {
+      value === ''
+        ? callback(new Error('请输入分类名称'))
+        : callback()
+    }
+    const coverImgValidate = (rule, value, callback) => {
+      value === ''
+        ? callback(new Error('请上传分类封面图'))
+        : callback()
+    }
     return {
       // 分类名称 - 分类图片
       categoryData: {
         name: '',
         coverImg: ''
+      },
+      //  规则
+      rules: {
+        name: [
+          { validator: nameValidate, trigger: 'blur' }
+        ],
+        coverImg: [
+          { validator: coverImgValidate, trigger: 'blur' }
+        ]
       }
     }
+  },
+  mounted () {
+    // 获取初始data数据
+    this.originalValue = this.$options.data()
   },
   methods: {
     // 保存数据
     saveData (formName) {
-      // 验证数据
+      // console.log(this.$refs[formName].validate(res => res))
       this.$refs[formName].validate(res => {
+        console.log(res)
         if (res) {
           this.$http.post('/createCategories', this.categoryData)
             .then(res => {
@@ -49,15 +73,18 @@ export default {
                   type: 'success',
                   message: '添加成功！'
                 })
-                this.$refs['categoryForm'].resetFields()
+                this.categoryData = this.originalValue.categoryData
+                this.$refs[formName].resetFields()
+                this.$router.push('/categories/list')
               }
             })
         }
       })
     },
     // 图片上传完成
-    handleAvatarSuccess (res, file) {
+    handleAvatarSuccess (res) {
       if (res.url) {
+        this.$refs['categoryForm'].clearValidate('coverImg')
         this.categoryData.coverImg = res.url
       }
     }

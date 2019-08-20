@@ -3,14 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="5ee8d5ed-c0fa-4f15-8af6-79951881d825" name="默认更改列表" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back-server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-server/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/back-server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/back-server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-server/public/upload/upload_5af493d9b5b7abf4e8d19cfe69b9cba7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-server/public/upload/upload_b02e2c7bf9644ab485f5e6713cfb0632.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/back-server/router/management.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-server/router/management.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-managent/src/http.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-managent/src/http.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-managent/src/views/CategoriesCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-managent/src/views/CategoriesCreate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-managent/src/views/CategoriesList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-managent/src/views/CategoriesList.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -56,23 +53,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/front-managent/src/views/CategoriesList.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state relative-caret-position="382">
+              <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front-managent/src/views/CategoriesCreate.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="39" column="11" lean-forward="true" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
-              <folding>
-                <element signature="e#1413#1652#0" />
-              </folding>
+            <state relative-caret-position="1269">
+              <caret line="95" column="18" lean-forward="true" selection-start-line="95" selection-start-column="18" selection-end-line="95" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -95,6 +89,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>validatePass</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -105,13 +104,13 @@
         <option value="$PROJECT_DIR$/front-managent/src/views/Home.vue" />
         <option value="$PROJECT_DIR$/front-managent/src/resetCss.css" />
         <option value="$PROJECT_DIR$/front-managent/src/App.vue" />
-        <option value="$PROJECT_DIR$/front-managent/src/views/CategoriesList.vue" />
         <option value="$PROJECT_DIR$/front-managent/src/views/Main.vue" />
         <option value="$PROJECT_DIR$/front-managent/src/main.js" />
         <option value="$PROJECT_DIR$/front-managent/src/router.js" />
         <option value="$PROJECT_DIR$/front-managent/vue.config.js" />
         <option value="$PROJECT_DIR$/front-managent/src/http.js" />
         <option value="$PROJECT_DIR$/front-managent/src/views/CategoriesCreate.vue" />
+        <option value="$PROJECT_DIR$/front-managent/src/views/CategoriesList.vue" />
       </list>
     </option>
   </component>
@@ -203,12 +202,13 @@
       <workItem from="1566129175607" duration="457000" />
       <workItem from="1566130119745" duration="6926000" />
       <workItem from="1566177345026" duration="11371000" />
-      <workItem from="1566214482907" duration="5824000" />
+      <workItem from="1566214482907" duration="6000000" />
+      <workItem from="1566264022993" duration="3983000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24820000" />
+    <option name="totallyTimeSpent" value="28979000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -236,7 +236,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="GraphQL" order="8" weight="0.32982087" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.2556701" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.25773194" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="调试" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -283,6 +283,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/front-managent/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-managent/src/views/Main.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/front-managent/src/router.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -300,34 +314,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-managent/src/views/Main.vue">
+    <entry file="file://$PROJECT_DIR$/front-managent/src/views/CategoriesCreate.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front-managent/src/App.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="1269">
+          <caret line="95" column="18" lean-forward="true" selection-start-line="95" selection-start-column="18" selection-end-line="95" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/front-managent/src/views/CategoriesList.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front-managent/src/views/CategoriesCreate.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="39" column="11" lean-forward="true" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
-          <folding>
-            <element signature="e#1413#1652#0" />
-          </folding>
+        <state relative-caret-position="382">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
         </state>
       </provider>
     </entry>
