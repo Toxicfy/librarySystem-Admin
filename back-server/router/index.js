@@ -2,9 +2,9 @@
  * 路由集合
  */
 const router = require('koa-router')()
-const management = require('./management.js')
+const category = require('./category.js')
 
 // 后台管理
-router.use('/management', management.routes(), management.allowedMethods())
+router.use('/api/category', category.routes(), category.allowedMethods())
 
 module.exports = router

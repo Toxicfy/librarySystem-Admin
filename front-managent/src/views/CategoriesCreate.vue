@@ -10,7 +10,7 @@
         </el-form-item>
         <el-form-item label="分类封面" prop="coverImg">
           <el-upload class="avatar-uploader" :show-file-list="false"
-                     :action="`${$http.defaults.baseURL}/uploadImg`"
+                     :action="`${$http.defaults.baseURL}/category/uploadImg`"
                      :on-success="handleAvatarSuccess">
             <img v-if="categoryData.coverImg" :src="categoryData.coverImg" class="avatar" alt>
             <i v-else class="el-icon-plus avatar-uploader-icon"></i>
@@ -70,7 +70,7 @@ export default {
       this.$refs[formName].validate(res => {
         if (res) {
           if (this.id) {
-            this.$http.post('/updateCategory', this.categoryData).then(res => {
+            this.$http.post('/category/updateCategoryItem', this.categoryData).then(res => {
               if (res.data) {
                 this.$message({
                   type: 'success',
@@ -82,7 +82,7 @@ export default {
               }
             })
           } else {
-            this.$http.post('/createCategories', this.categoryData)
+            this.$http.post('/category/createCategories', this.categoryData)
               .then(res => {
                 if (res.data) {
                   this.$message({
@@ -100,14 +100,14 @@ export default {
     },
     // 图片上传完成
     handleAvatarSuccess (res) {
-      if (res.url) {
+      if (res.data.url) {
         this.$refs['categoryForm'].clearValidate('coverImg')
-        this.categoryData.coverImg = res.url
+        this.categoryData.coverImg = res.data.url
       }
     },
     // 获取单个分类的信息
     getCategoryItem () {
-      this.$http.get(`/CategoryItem?id=${this.id}`)
+      this.$http.get(`/category/CategoryItem?id=${this.id}`)
         .then(({ data }) => {
           if (data.err_code === 0) {
             this.categoryData = Object.assign(this.categoryData, data.data)
@@ -161,7 +161,10 @@ export default {
           display: block;
         }
       }
+      .el-input{
+        min-width: 375px;
+        width: 65%;
+      }
     }
   }
-
 </style>

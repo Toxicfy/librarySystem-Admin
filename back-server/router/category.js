@@ -12,74 +12,58 @@ const koaBodyConfig = {
 // 数据表对象（基于此对象 - 增删改查）
 const Category = require('../models/category')
 
+const successModel = (data, msg, err_code = 0) => {
+  return {
+    data,
+    err_code,
+    msg
+  }
+}
+
 // 创建图书分类
-router.post('/api/createCategories', koaBody(), async ctx => {
+router.post('/createCategories', koaBody(), async ctx => {
   let postData = ctx.request.body
   // 数据插入
   const model = await Category.create(postData)
-  ctx.body = {
-    data: model,
-    err_code: 0,
-    msg: '创建图书分类成功'
-  }
+  ctx.body = successModel(model, '创建图书分类成功')
 })
 
 // 通用上传图片
-router.post('/api/uploadImg', koaBody(koaBodyConfig), async ctx => {
+router.post('/uploadImg', koaBody(koaBodyConfig), async ctx => {
   const fileInfo = ctx.request.files.file
   const name = fileInfo.path.split('/').pop()
   const url = `http://localhost:3000/upload/${name}`
   console.log(fileInfo.path.split('/').pop())
-  ctx.body = JSON.stringify({
-    err_code: 0,
-    msg: '上传图片成功',
-    url,
-    fileInfo
-  })
+  ctx.body = successModel({ url, fileInfo }, '上传图片成功')
 })
 
 // 获取图书分类列表
-router.get('/api/getCategories', async ctx => {
+router.get('/getCategories', async ctx => {
   let model = await Category.find().sort({ _id: -1 })
-  ctx.body = {
-    err_code: 0,
-    msg: '获取成功',
-    data: model
-  }
+  ctx.body = successModel(model, '数据获取成功')
 })
 
 // delCategory
-router.post('/api/delCategory', koaBody(), async ctx => {
+router.post('/delCategory', koaBody(), async ctx => {
   const _id = ctx.request.body.id
   const model = await Category.findOneAndRemove({ _id })
-  ctx.body = {
-    err_code: 0,
-    msg: '删除数据成功',
-    data: JSON.stringify(model)
-  }
+  ctx.body = successModel(model, '删除数据成功')
 })
 
 // 获取单个分类数据
-router.get('/api/CategoryItem', async ctx => {
+router.get('/CategoryItem', async ctx => {
   const id = ctx.query.id
   if (id) {
     const model = await Category.findById(id)
-    ctx.body = {
-      err_code: 0,
-      msg: '获取数据成功',
-      data: model
-    }
+    ctx.body = successModel(model, '数据获取成功')
   }
 })
 
 // 更新分类数据
-router.post('/api/updateCategory', koaBody(), async ctx => {
+router.post('/updateCategoryItem', koaBody(), async ctx => {
   let postData = ctx.request.body
   let model = await Category.findByIdAndUpdate(postData._id, postData)
-  ctx.body = {
-    err_code: 0,
-    msg: '数据更新成功',
-    data: model
-  }
+  ctx.body = successModel(model, '更新数据成功')
 })
+
 module.exports = router

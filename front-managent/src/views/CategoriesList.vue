@@ -7,8 +7,8 @@
         <div class="description"><span>{{item.name}}</span></div>
         <el-image class="cover-image" :src="item.coverImg" fit="cover"></el-image>
         <div class="operate-tool">
-          <el-button type="success" icon="el-icon-edit" circle @click="editCategoryItem(item)"></el-button>
-          <el-button type="danger" icon="el-icon-delete" circle @click="delCategoryItem(item)"></el-button>
+          <el-button type="info" icon="el-icon-edit" circle size="small"  @click="editCategoryItem(item)"></el-button>
+          <el-button type="danger" icon="el-icon-delete" circle size="small" @click="delCategoryItem(item)"></el-button>
         </div>
       </el-card>
     </div>
@@ -30,7 +30,7 @@ export default {
   methods: {
     // 获取 --- 分类数据列表
     getCategories () {
-      this.$http('/getCategories').then(({ data }) => {
+      this.$http('/category/getCategories').then(({ data }) => {
         if (data.err_code === 0) {
           this.categoryData = data.data
         }
@@ -44,7 +44,7 @@ export default {
         showClose: false,
         type: 'warning'
       }).then(() => {
-        this.$http.post('/delCategory', { id: data._id })
+        this.$http.post('/category/delCategory', { id: data._id })
           .then(res => {
             console.log(res.data)
             if (res.data.err_code === 0) {
@@ -77,10 +77,11 @@ export default {
         display: flex;
         justify-content: center;
         min-width: 150px;
+        border-radius: 16px;
         margin: 20px;
         .cover-image{
           margin: 10px 0 15px;
-          border-radius: 10px;
+          border-radius: 4px;
           display: block;
           height: 180px;
           width: 160px;
