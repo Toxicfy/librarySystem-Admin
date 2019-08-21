@@ -58,4 +58,28 @@ router.post('/api/delCategory', koaBody(), async ctx => {
     data: JSON.stringify(model)
   }
 })
+
+// 获取单个分类数据
+router.get('/api/CategoryItem', async ctx => {
+  const id = ctx.query.id
+  if (id) {
+    const model = await Category.findById(id)
+    ctx.body = {
+      err_code: 0,
+      msg: '获取数据成功',
+      data: model
+    }
+  }
+})
+
+// 更新分类数据
+router.post('/api/updateCategory', koaBody(), async ctx => {
+  let postData = ctx.request.body
+  let model = await Category.findByIdAndUpdate(postData._id, postData)
+  ctx.body = {
+    err_code: 0,
+    msg: '数据更新成功',
+    data: model
+  }
+})
 module.exports = router

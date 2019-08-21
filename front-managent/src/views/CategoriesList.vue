@@ -1,13 +1,13 @@
 <!--CategoriesCreate.vue-->
 <template>
   <div id="categories-list">
-    <h2 class="title">图书分类列表</h2>
+    <h2 class="title">书籍分类列表</h2>
     <div class="categoryList">
       <el-card v-for="(item,index) in categoryData" :key="index">
         <div class="description"><span>{{item.name}}</span></div>
         <el-image class="cover-image" :src="item.coverImg" fit="cover"></el-image>
         <div class="operate-tool">
-          <el-button type="success" icon="el-icon-edit" circle></el-button>
+          <el-button type="success" icon="el-icon-edit" circle @click="editCategoryItem(item)"></el-button>
           <el-button type="danger" icon="el-icon-delete" circle @click="delCategoryItem(item)"></el-button>
         </div>
       </el-card>
@@ -56,6 +56,11 @@ export default {
             }
           })
       })
+    },
+    // 编辑 --- 分类单项
+    editCategoryItem (data) {
+      console.log(data._id)
+      this.$router.push(`/categories/edit/${data._id}`)
     }
   }
 }

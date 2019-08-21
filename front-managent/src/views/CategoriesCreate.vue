@@ -1,24 +1,26 @@
 <!--CategoriesCreate.vue-->
 <template>
   <div id="categories-create">
-    <h2 class="title">新建图书分类</h2>
+    <h2 class="title">{{id ? '编辑':'新建'}}书籍分类</h2>
     <div class="form-container">
-        <el-form @submit.native.prevent="saveData('categoryForm')" label-width="100px" ref="categoryForm" :model="categoryData" :rules="rules">
-          <el-form-item label="分类名称" prop="name">
-            <el-input v-model="categoryData.name"></el-input>
-          </el-form-item>
-          <el-form-item label="分类封面" prop="coverImg">
-            <el-upload class="avatar-uploader" :show-file-list="false"
-                    :action="`${$http.defaults.baseURL}/uploadImg`"
-                    :on-success="handleAvatarSuccess">
-              <img v-if="categoryData.coverImg" :src="categoryData.coverImg" class="avatar" alt>
-              <i v-else class="el-icon-plus avatar-uploader-icon"></i>
-            </el-upload>
-          </el-form-item>
-          <el-form-item>
-            <el-button type="info" plain native-type="submit">提交</el-button>
-          </el-form-item>
-        </el-form>
+      <el-form @submit.native.prevent="saveData('categoryForm')" label-width="100px" ref="categoryForm"
+               :model="categoryData" :rules="rules">
+        <el-form-item label="分类名称" prop="name">
+          <el-input v-model="categoryData.name"></el-input>
+        </el-form-item>
+        <el-form-item label="分类封面" prop="coverImg">
+          <el-upload class="avatar-uploader" :show-file-list="false"
+                     :action="`${$http.defaults.baseURL}/uploadImg`"
+                     :on-success="handleAvatarSuccess">
+            <img v-if="categoryData.coverImg" :src="categoryData.coverImg" class="avatar" alt>
+            <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+          </el-upload>
+        </el-form-item>
+        <el-form-item>
+          <el-button type="success" native-type="submit">提交</el-button>
+          <el-button @click="cancelModifyCategory" v-if="id">取消</el-button>
+        </el-form-item>
+      </el-form>
     </div>
 
   </div>
@@ -27,6 +29,9 @@
 <script>
 export default {
   name: 'categoriesCreate',
+  props: {
+    id: { type: String }
+  },
   data () {
     const nameValidate = (rule, value, callback) => {
       value === ''
@@ -63,10 +68,9 @@ export default {
     // 保存数据
     saveData (formName) {
       this.$refs[formName].validate(res => {
-        console.log(res)
         if (res) {
-          this.$http.post('/createCategories', this.categoryData)
-            .then(res => {
+          if (this.id) {
+            this.$http.post('/updateCategory', this.categoryData).then(res => {
               if (res.data) {
                 this.$message({
                   type: 'success',
@@ -77,6 +81,20 @@ export default {
                 this.$router.push('/categories/list')
               }
             })
+          } else {
+            this.$http.post('/createCategories', this.categoryData)
+              .then(res => {
+                if (res.data) {
+                  this.$message({
+                    type: 'success',
+                    message: res.data.msg
+                  })
+                  this.categoryData = this.originalValue.categoryData
+                  this.$refs[formName].resetFields()
+                  this.$router.push('/categories/list')
+                }
+              })
+          }
         }
       })
     },
@@ -86,17 +104,38 @@ export default {
         this.$refs['categoryForm'].clearValidate('coverImg')
         this.categoryData.coverImg = res.url
       }
+    },
+    // 获取单个分类的信息
+    getCategoryItem () {
+      this.$http.get(`/CategoryItem?id=${this.id}`)
+        .then(({ data }) => {
+          if (data.err_code === 0) {
+            this.categoryData = Object.assign(this.categoryData, data.data)
+          }
+        })
+    },
+    // 取消修改分类信息
+    cancelModifyCategory () {
+      this.$router.push('/categories/list')
     }
+  },
+  created () {
+    this.id && this.getCategoryItem()
+  },
+  beforeRouteLeave (to, from, next) {
+    this.categoryData = this.originalValue.categoryData
+    next()
   }
 }
 </script>
 
 <style lang="scss" scoped>
-  .title{
+  .title {
     text-decoration: underline;
   }
-  .form-container{
-    .el-form{
+
+  .form-container {
+    .el-form {
       width: 60%;
       min-width: 500px;
       /* avatar */
@@ -105,6 +144,7 @@ export default {
         cursor: pointer;
         position: relative;
         overflow: hidden;
+
         .avatar-uploader-icon {
           border: 1px dashed #d9d9d9;
           font-size: 28px;
@@ -114,6 +154,7 @@ export default {
           line-height: 178px;
           text-align: center;
         }
+
         .avatar {
           width: 178px;
           height: 178px;

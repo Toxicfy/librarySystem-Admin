@@ -13,6 +13,7 @@ export default new Router({
       children: [
         // which is lazy-loaded when the route is visited.
         { path: '/categories/create', component: () => import('./views/CategoriesCreate.vue') },
+        { path: '/categories/edit/:id', component: () => import('./views/CategoriesCreate.vue'), props: true },
         { path: '/categories/list', component: () => import('./views/CategoriesList.vue') }
       ]
     }

@@ -6,7 +6,6 @@ const app = new Koa()
 // 数据库
 const db = require('./plugins/db')()
 
-
 // 实现静态资源服务
 const staticPath = './static'
 app.use(static(path.join(__dirname, staticPath)))

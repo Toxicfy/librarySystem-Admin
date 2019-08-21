@@ -2,6 +2,9 @@
   <el-container>
     <!-- 侧边栏 -->
     <el-aside>
+      <div class="logo">
+        <img src="../assets/logo.png" alt="logo">
+      </div>
       <el-menu router :default-active="$route.path" :default-openeds="['内容管理']" background-color="#10131e" text-color="#cfd0d3" active-text-color="#fff">
         <el-submenu index="内容管理">
           <template slot="title"><i class="el-icon-menu"></i><span>内容管理</span></template>
@@ -35,10 +38,24 @@ export default {
 <style lang="scss" scoped>
   .el-container{
     .el-aside{
+      overflow: hidden;
+      .logo{
+        width: 239px;
+        height: 90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        background-color: #10131e;
+        img{
+          width: 138px;
+          height: 75px;
+        }
+      }
       width: 240px !important;
       height: 100vh;
       .el-menu{
-        height: 100%;
+        height: calc(100% - 80px);
       }
     }
   }
@@ -60,8 +77,8 @@ export default {
     background: #f9f9fb;
     .main-header{
       background: #ffffff;
-      height: 60px;
-      box-shadow: 0 0 7px rgba(0,0,0,0.2);
+      height: 90px;
+      box-shadow: 0 0 7px rgba(0,0,0,0.4);
     }
     .main-content{
       padding: 20px;
