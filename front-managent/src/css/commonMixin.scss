@@ -1,0 +1,5 @@
+// 公用css
+@mixin widthAndMinWidth($width: 65%, $minWidth: 375px){
+    width: $width;
+    min-width: $minWidth;
+}

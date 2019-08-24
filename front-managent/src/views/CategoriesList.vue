@@ -30,7 +30,7 @@ export default {
   methods: {
     // 获取 --- 分类数据列表
     getCategories () {
-      this.$http('/category/getCategories').then(({ data }) => {
+      this.$http('/category/getList').then(({ data }) => {
         if (data.err_code === 0) {
           this.categoryData = data.data
         }
@@ -44,14 +44,11 @@ export default {
         showClose: false,
         type: 'warning'
       }).then(() => {
-        this.$http.post('/category/delCategory', { id: data._id })
+        this.$http.post('/category/del', { id: data._id })
           .then(res => {
             console.log(res.data)
             if (res.data.err_code === 0) {
-              this.$message({
-                type: 'success',
-                message: res.data.msg
-              })
+              this.$message({ type: 'success', message: res.data.msg })
               this.getCategories()
             }
           })

@@ -3,15 +3,12 @@
   <div id="categories-create">
     <h2 class="title">{{id ? '编辑':'新建'}}书籍分类</h2>
     <div class="form-container">
-      <el-form @submit.native.prevent="saveData('categoryForm')" label-width="100px" ref="categoryForm"
-               :model="categoryData" :rules="rules">
+      <el-form @submit.native.prevent="saveData('categoryForm')" label-width="100px" ref="categoryForm" :model="categoryData" :rules="rules">
         <el-form-item label="分类名称" prop="name">
           <el-input v-model="categoryData.name"></el-input>
         </el-form-item>
         <el-form-item label="分类封面" prop="coverImg">
-          <el-upload class="avatar-uploader" :show-file-list="false"
-                     :action="`${$http.defaults.baseURL}/category/uploadImg`"
-                     :on-success="handleAvatarSuccess">
+          <el-upload class="avatar-uploader" :show-file-list="false" :action="`${$http.defaults.baseURL}/category/uploadImg`" :on-success="handleAvatarSuccess">
             <img v-if="categoryData.coverImg" :src="categoryData.coverImg" class="avatar" alt>
             <i v-else class="el-icon-plus avatar-uploader-icon"></i>
           </el-upload>
@@ -22,7 +19,6 @@
         </el-form-item>
       </el-form>
     </div>
-
   </div>
 </template>
 
@@ -70,25 +66,19 @@ export default {
       this.$refs[formName].validate(res => {
         if (res) {
           if (this.id) {
-            this.$http.post('/category/updateCategoryItem', this.categoryData).then(res => {
+            this.$http.post('/category/update', this.categoryData).then(res => {
               if (res.data) {
-                this.$message({
-                  type: 'success',
-                  message: res.data.msg
-                })
+                this.$message({ type: 'success', message: res.data.msg })
                 this.categoryData = this.originalValue.categoryData
                 this.$refs[formName].resetFields()
                 this.$router.push('/categories/list')
               }
             })
           } else {
-            this.$http.post('/category/createCategories', this.categoryData)
+            this.$http.post('/category/create', this.categoryData)
               .then(res => {
                 if (res.data) {
-                  this.$message({
-                    type: 'success',
-                    message: res.data.msg
-                  })
+                  this.$message({ type: 'success', message: res.data.msg })
                   this.categoryData = this.originalValue.categoryData
                   this.$refs[formName].resetFields()
                   this.$router.push('/categories/list')
@@ -107,7 +97,7 @@ export default {
     },
     // 获取单个分类的信息
     getCategoryItem () {
-      this.$http.get(`/category/CategoryItem?id=${this.id}`)
+      this.$http.get(`/category/detail?id=${this.id}`)
         .then(({ data }) => {
           if (data.err_code === 0) {
             this.categoryData = Object.assign(this.categoryData, data.data)
@@ -130,41 +120,40 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .title {
-    text-decoration: underline;
-  }
+  @import "../css/commonMixin.scss";
+.title {
+  text-decoration: underline;
+}
 
-  .form-container {
-    .el-form {
-      width: 60%;
-      min-width: 500px;
-      /* avatar */
-      .el-upload {
-        border-radius: 6px;
-        cursor: pointer;
-        position: relative;
-        overflow: hidden;
+.form-container {
+  .el-form {
+    @include widthAndMinWidth(60%,500px);
+    /* avatar */
+    .el-upload {
+      border-radius: 6px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
 
-        .avatar-uploader-icon {
-          border: 1px dashed #d9d9d9;
-          font-size: 28px;
-          color: #8c939d;
-          width: 178px;
-          height: 178px;
-          line-height: 178px;
-          text-align: center;
-        }
-
-        .avatar {
-          width: 178px;
-          height: 178px;
-          display: block;
-        }
+      .avatar-uploader-icon {
+        border: 1px dashed #d9d9d9;
+        font-size: 28px;
+        color: #8c939d;
+        width: 178px;
+        height: 178px;
+        line-height: 178px;
+        text-align: center;
       }
-      .el-input{
-        min-width: 375px;
-        width: 65%;
+
+      .avatar {
+        width: 178px;
+        height: 178px;
+        display: block;
       }
     }
+    .el-input {
+      @include widthAndMinWidth()
+    }
   }
+}
 </style>

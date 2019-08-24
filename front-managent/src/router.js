@@ -14,7 +14,11 @@ export default new Router({
         // which is lazy-loaded when the route is visited.
         { path: '/categories/create', component: () => import('./views/CategoriesCreate.vue') },
         { path: '/categories/edit/:id', component: () => import('./views/CategoriesCreate.vue'), props: true },
-        { path: '/categories/list', component: () => import('./views/CategoriesList.vue') }
+        { path: '/categories/list', component: () => import('./views/CategoriesList.vue') },
+        // book
+        { path: '/books/create', component: () => import('./views/BooksCreate.vue') },
+        { path: '/books/list', component: () => import('./views/BooksList.vue') },
+        { path: '/books/edit/:id', component: () => import('./views/BooksCreate.vue'), props: true }
       ]
     }
   ]
