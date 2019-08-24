@@ -84,14 +84,19 @@ export default {
     // 获取单个书籍信息
     getDetail () {
       this.$http.get('/book/detail', { params: { id: this.id } }).then(res => {
-        console.log(res.data)
         this.bookData = res.data.data
+        this.bookData.categoryId = res.data.data.categoryId._id
+        console.log(this.bookData.categoryId)
       })
     },
     // 取消编辑
     cancelEdit () {
       this.$router.push('/books/list')
     }
+  },
+  beforeRouteLeave (to, form, next) {
+    this.bookData = this.$options.data().bookData
+    next()
   }
 }
 </script>
