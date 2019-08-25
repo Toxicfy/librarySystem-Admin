@@ -2,24 +2,26 @@
   <div class="books-create">
     <h2 class="title">{{id ? '编辑':'创建'}}书籍信息</h2>
     <div class="form-container">
-      <el-form :model="bookData" label-width="100px" @submit.native.prevent="saveBookData">
+      <el-form :model="bookData" label-width="100px" @submit.native.prevent="saveBookData" :inline="true">
         <el-form-item label="书籍名称">
           <el-input v-model="bookData.fileName"></el-input>
         </el-form-item>
         <el-form-item label="所属分类">
           <el-select v-model="bookData.categoryId" placeholder="请输入书籍所属分类" value>
-            <el-option :label="item.name" :value="item._id" v-for="(item,index) in categoryData" :key="index"></el-option>
+            <el-option :label="item.name" :value="item._id" v-for="(item,index) in categoryData"
+                       :key="index"></el-option>
           </el-select>
         </el-form-item>
         <el-form-item label="书籍作者">
           <el-input v-model="bookData.author"></el-input>
         </el-form-item>
         <el-form-item label="书籍评分" class="rank-container">
-          <el-rate v-model="bookData.rank"></el-rate >
-          <span v-if="bookData.rank">{{bookData.rank}}</span>
+          <el-rate v-model="bookData.rank"></el-rate>
+          <span v-if="bookData.rank" class="rank-text">{{bookData.rank}}</span>
         </el-form-item>
-        <el-form-item label="书籍封面" prop="coverImg">
-          <el-upload class="avatar-uploader" :show-file-list="false" :action="`${$http.defaults.baseURL}/book/uploadImg`" :on-success="handleAvatarSuccess">
+        <el-form-item label="书籍封面" prop="coverImg" class="upload-img">
+          <el-upload class="avatar-uploader" :show-file-list="false"
+                     :action="`${$http.defaults.baseURL}/book/uploadImg`" :on-success="handleAvatarSuccess">
             <img v-if="bookData.coverImg" :src="bookData.coverImg" class="avatar" alt>
             <i v-else class="el-icon-plus avatar-uploader-icon"></i>
           </el-upload>
@@ -27,7 +29,7 @@
         <el-form-item label="书籍简介">
           <el-input type="textarea" :rows="5" v-model="bookData.description"></el-input>
         </el-form-item>
-        <el-form-item>
+        <el-form-item class="btn-group">
           <el-button native-type="submit" type="success">提交</el-button>
           <el-button type="info" @click="cancelEdit" v-if="id">取消</el-button>
         </el-form-item>
@@ -118,55 +120,75 @@ export default {
 
 <style lang="scss" scoped>
   @import "../css/commonMixin.scss";
-.books-create{
-  .title{
-    text-decoration: underline;
-  }
-  .form-container{
-    .el-form{
-      @include widthAndMinWidth(60%, 500px);
-      .el-input{
-        @include widthAndMinWidth();
-      }
-      .el-textarea{
-        @include widthAndMinWidth();
-      }
-      .el-select{
-        @include widthAndMinWidth(55%)
-      }
-      .rank-container{
-        .el-rate{
-          line-height: 50px;
-          float: left;
-          .el-rate__icon{
-            font-size: 24px !important;
+
+  .books-create {
+    .title {
+      text-decoration: underline;
+    }
+
+    .form-container {
+      .el-form {
+        @include widthAndMinWidth(60%, 500px);
+
+        .el-input {
+          @include widthAndMinWidth();
+        }
+
+        .el-textarea {
+          @include widthAndMinWidth();
+        }
+
+        .el-select {
+          @include widthAndMinWidth()
+        }
+
+        .rank-container {
+          .rank-text{
+            margin-left: 20px;
+            font-size: 16px;
+            font-style: italic;
+          }
+          .el-rate {
+            line-height: 50px;
+            float: left;
+
+            .el-rate__icon {
+              font-size: 24px !important;
+            }
           }
         }
       }
     }
-  }
-  /* avatar */
-  .el-upload {
-    border-radius: 6px;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-
-    .avatar-uploader-icon {
-      border: 1px dashed #d9d9d9;
-      font-size: 28px;
-      color: #8c939d;
-      width: 178px;
-      height: 178px;
-      line-height: 178px;
-      text-align: center;
+    .upload-img,.btn-group{
+      @include widthAndMinWidth(60%, 550px)
+    }
+    .btn-group{
+      margin-left: 100px;
     }
 
-    .avatar {
-      width: 178px;
-      height: 178px;
-      display: block;
+      /* avatar */
+    .el-upload {
+      @include widthAndMinWidth(60%, 500px);
+      border-radius: 6px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+
+      .avatar-uploader-icon {
+        border: 1px dashed #d9d9d9;
+        font-size: 28px;
+        color: #8c939d;
+        width: 178px;
+        height: 178px;
+        line-height: 178px;
+        text-align: center;
+      }
+
+      .avatar {
+        width: 178px;
+        height: 178px;
+        display: block;
+      }
     }
   }
-}
 </style>
