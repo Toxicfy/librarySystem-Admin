@@ -9,7 +9,7 @@
           <img :src="data.row.coverImg"  min-width="70" height="70" alt="coverImg"/>
         </template>
       </el-table-column>
-      <el-table-column prop="author" label="作者" align="center"></el-table-column>
+      <el-table-column prop="author" label="作者" align="center" width='220' :show-overflow-tooltip='true'></el-table-column>
       <el-table-column prop="rank" label="书籍评分" align="center" ></el-table-column>
       <el-table-column prop="categoryId.name" label="分类名称" align="center"> </el-table-column>
       <el-table-column  label="操作" align="center">
