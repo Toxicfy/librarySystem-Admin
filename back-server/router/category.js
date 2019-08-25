@@ -1,39 +1,22 @@
 const router = require('koa-router')()
 const koaBody = require('koa-body')
-const path = require('path')
-const koaBodyConfig = {
-  multipart: true,
-  formidable: {
-    uploadDir: path.join(__dirname, '../static/upload/'), // 设置文件上传目录
-    keepExtensions: true, // 保持文件的后缀
-    maxFieldsSize: 2 * 1024 * 1024 // 文件上传大小
-  }
-}
+const { koaBodyConfig, successModel } = require('../util/common')
 
 // 数据表对象（基于此对象 - 增删改查）
 const Category = require('../models/category')
-
-const successModel = (data, msg, err_code = 0) => {
-  return {
-    data,
-    err_code,
-    msg
-  }
-}
-
+const imgConfig = koaBodyConfig('../static/upload/category')
 // 创建图书分类
 router.post('/create', koaBody(), async ctx => {
   let postData = ctx.request.body
-  // 数据插入
-  const model = await Category.create(postData)
+  const model = await Category.create(postData) // 数据插入
   ctx.body = successModel(model, '创建图书分类成功')
 })
 
-// 通用上传图片
-router.post('/uploadImg', koaBody(koaBodyConfig), async ctx => {
+// 上传图片
+router.post('/uploadImg', koaBody(imgConfig), async ctx => {
   const fileInfo = ctx.request.files.file
   const name = fileInfo.path.split('/').pop()
-  const url = `http://localhost:3000/upload/${name}`
+  const url = `http://localhost:3000/upload/category/${name}`
   console.log(fileInfo.path.split('/').pop())
   ctx.body = successModel({ url, fileInfo }, '上传图片成功')
 })

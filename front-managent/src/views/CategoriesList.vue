@@ -5,7 +5,7 @@
     <div class="categoryList">
       <el-card v-for="(item,index) in categoryData" :key="index">
         <div class="description"><span>{{item.name}}</span></div>
-        <el-image class="cover-image" :src="item.coverImg" fit="cover"></el-image>
+        <el-image class="cover-image" :src="item.coverImg" ></el-image>
         <div class="operate-tool">
           <el-button type="info" icon="el-icon-edit" circle size="small"  @click="editCategoryItem(item)"></el-button>
           <el-button type="danger" icon="el-icon-delete" circle size="small" @click="delCategoryItem(item)"></el-button>

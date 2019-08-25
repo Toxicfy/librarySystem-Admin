@@ -2,9 +2,15 @@
   <div class="books-list">
     <h2 class="title">书籍列表</h2>
     <el-table :data="bookList" border>
+      <el-table-column prop="_id" label="书籍ID" align="center" width="220"></el-table-column>
       <el-table-column prop="fileName" label="名称" align="center"></el-table-column>
+      <el-table-column label="书籍封面" align="center" prop="coverImg" >
+        <template   slot-scope="data">
+          <img :src="data.row.coverImg"  min-width="70" height="70" alt="coverImg"/>
+        </template>
+      </el-table-column>
       <el-table-column prop="author" label="作者" align="center"></el-table-column>
-      <el-table-column prop="rank" label="书籍评分" align="center"></el-table-column>
+      <el-table-column prop="rank" label="书籍评分" align="center" ></el-table-column>
       <el-table-column prop="categoryId.name" label="分类名称" align="center"> </el-table-column>
       <el-table-column  label="操作" align="center">
         <template slot-scope="data">

@@ -1,14 +1,18 @@
 const router = require('koa-router')()
 const koaBody = require('koa-body')
+const { successModel, koaBodyConfig } = require('../util/common')
 
+// mongodb model
 const Book = require('../models/book')
-const successModel = (data, msg, err_code = 0) => {
-  return {
-    data,
-    err_code,
-    msg
-  }
-}
+const imgConfig = koaBodyConfig('../static/upload/book')
+
+// 书籍上传图片
+router.post('/uploadImg', koaBody(imgConfig), async ctx => {
+  const fileInfo = ctx.request.files.file
+  const name = fileInfo.path.split('/').pop()
+  const url = `http://localhost:3000/upload/book/${name}`
+  ctx.body = successModel({ url, fileInfo }, '上传图片成功')
+})
 
 // 创建书籍信息
 router.post('/create', koaBody(), async ctx => {

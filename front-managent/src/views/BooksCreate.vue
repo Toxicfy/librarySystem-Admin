@@ -18,6 +18,12 @@
           <el-rate v-model="bookData.rank"></el-rate >
           <span v-if="bookData.rank">{{bookData.rank}}</span>
         </el-form-item>
+        <el-form-item label="书籍封面" prop="coverImg">
+          <el-upload class="avatar-uploader" :show-file-list="false" :action="`${$http.defaults.baseURL}/book/uploadImg`" :on-success="handleAvatarSuccess">
+            <img v-if="bookData.coverImg" :src="bookData.coverImg" class="avatar" alt>
+            <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+          </el-upload>
+        </el-form-item>
         <el-form-item label="书籍简介">
           <el-input type="textarea" :rows="5" v-model="bookData.description"></el-input>
         </el-form-item>
@@ -43,7 +49,8 @@ export default {
         categoryId: '',
         author: '',
         description: '',
-        rank: 0
+        rank: 0,
+        coverImg: ''
       },
       categoryData: []
     }
@@ -92,6 +99,14 @@ export default {
     // 取消编辑
     cancelEdit () {
       this.$router.push('/books/list')
+    },
+    // 图片上传完成
+    handleAvatarSuccess (res) {
+      console.log(res)
+      if (res.data.url) {
+        // this.$refs['categoryForm'].clearValidate('coverImg')
+        this.bookData.coverImg = res.data.url
+      }
     }
   },
   beforeRouteLeave (to, form, next) {
@@ -128,6 +143,29 @@ export default {
           }
         }
       }
+    }
+  }
+  /* avatar */
+  .el-upload {
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    .avatar-uploader-icon {
+      border: 1px dashed #d9d9d9;
+      font-size: 28px;
+      color: #8c939d;
+      width: 178px;
+      height: 178px;
+      line-height: 178px;
+      text-align: center;
+    }
+
+    .avatar {
+      width: 178px;
+      height: 178px;
+      display: block;
     }
   }
 }
