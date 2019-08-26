@@ -2,9 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ee8d5ed-c0fa-4f15-8af6-79951881d825" name="默认更改列表" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-server/router/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-server/router/book.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-managent/src/views/AdminCreate.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-managent/src/views/Adminlist.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/back-server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/back-server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-server/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-server/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-managent/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-managent/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-managent/src/css/commonMixin.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-managent/src/css/commonMixin.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-managent/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-managent/src/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-managent/src/views/BooksCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-managent/src/views/BooksCreate.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-managent/src/views/BooksList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-managent/src/views/BooksList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-managent/src/views/CategoriesCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-managent/src/views/CategoriesCreate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-managent/src/views/Main.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-managent/src/views/Main.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,8 +33,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front-managent/src/css/commonMixin.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="28">
-              <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+            <state relative-caret-position="168">
+              <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -32,26 +42,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front-managent/src/views/Main.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-managent/node_modules/element-ui/packages/menu/src/menu-item-group.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
-              <caret line="2" column="52" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-managent/src/views/CategoriesList.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="3" column="33" lean-forward="true" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+            <state relative-caret-position="543">
+              <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -60,7 +52,28 @@
         <entry file="file://$PROJECT_DIR$/front-managent/src/router.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="28">
-              <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
+              <caret line="1" column="31" lean-forward="true" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front-managent/src/views/Adminlist.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="211">
+              <caret line="57" column="21" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="21" />
+              <folding>
+                <element signature="e#1081#1564#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/front-managent/src/views/AdminCreate.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="386">
+              <caret line="47" column="12" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -68,18 +81,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front-managent/src/views/BooksList.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="11" column="74" lean-forward="true" selection-start-line="11" selection-start-column="74" selection-end-line="11" selection-end-column="104" />
+            <state relative-caret-position="252">
+              <caret line="53" column="30" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="30" />
+              <folding>
+                <element signature="n#el-table#0;n#div#0;n#template#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="252">
-                <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+                <caret line="9" selection-start-line="9" selection-end-line="9" />
               </first_editor>
               <second_editor />
             </state>
@@ -89,18 +105,56 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front-managent/src/views/BooksCreate.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1527">
-              <caret line="164" column="15" lean-forward="true" selection-start-line="164" selection-start-column="15" selection-end-line="164" selection-end-column="15" />
+            <state relative-caret-position="491">
+              <caret line="34" column="23" lean-forward="true" selection-start-line="31" selection-start-column="8" selection-end-line="34" selection-end-column="23" />
               <folding>
                 <element signature="n#el-form-item#0;n#el-form#0;n#div#0;n#div#0;n#template#0;n#!!top" />
                 <element signature="n#el-form-item#1;n#el-form#0;n#div#0;n#div#0;n#template#0;n#!!top" />
                 <element signature="n#el-form-item#2;n#el-form#0;n#div#0;n#div#0;n#template#0;n#!!top" />
                 <element signature="n#script#0;n#!!top" />
-                <element signature="e#2876#2913#0" />
-                <element signature="e#3007#3053#0" />
-                <element signature="e#3072#3118#0" />
-                <element signature="e#3135#3183#0" />
-                <element signature="e#4069#4494#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front-managent/src/views/CategoriesCreate.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="201">
+              <caret line="129" selection-start-line="129" selection-end-line="130" />
+              <folding>
+                <element signature="n#el-upload#0;n#el-form-item#1;n#el-form#0;n#div#0;n#div#0;n#template#0;n#!!top" />
+                <element signature="e#1120#3637#0" />
+                <element signature="e#1159#1189#0" />
+                <element signature="e#1201#1810#0" />
+                <element signature="e#1255#1343#0" />
+                <element signature="e#1400#1489#0" />
+                <element signature="e#1501#1806#0" />
+                <element signature="e#1544#1592#0" />
+                <element signature="e#1620#1800#0" />
+                <element signature="e#1636#1702#0" />
+                <element signature="e#1722#1792#0" />
+                <element signature="e#1825#1894#0" />
+                <element signature="e#1907#3467#0" />
+                <element signature="e#1945#2898#0" />
+                <element signature="e#1990#2891#0" />
+                <element signature="e#2009#2883#0" />
+                <element signature="e#2034#2436#0" />
+                <element signature="e#2115#2423#0" />
+                <element signature="e#2145#2409#0" />
+                <element signature="e#2442#2873#0" />
+                <element signature="e#2538#2860#0" />
+                <element signature="e#2570#2844#0" />
+                <element signature="e#2944#3096#0" />
+                <element signature="e#2970#3090#0" />
+                <element signature="e#3138#3366#0" />
+                <element signature="e#3223#3359#0" />
+                <element signature="e#3260#3349#0" />
+                <element signature="e#3412#3463#0" />
+                <element signature="e#3482#3525#0" />
+                <element signature="e#3563#3635#0" />
+                <element signature="e#3720#3753#0" />
+                <element signature="e#3990#4185#0" />
               </folding>
             </state>
           </provider>
@@ -131,12 +185,20 @@
       <find>allowHalf</find>
       <find>router</find>
       <find>this.$message({</find>
-      <find>this.$message</find>
       <find>border</find>
       <find>avatar-uploader</find>
       <find>el-upload</find>
       <find>cover</find>
       <find>uploadImg</find>
+      <find>.avatar</find>
+      <find>内容管理</find>
+      <find>.el-submenu__title</find>
+      <find>:show-overflow-tooltip='true'</find>
+      <find>.books-create</find>
+      <find>Admin.list.vue</find>
+      <find>bookList</find>
+      <find>this.$message</find>
+      <find>cancelEdit</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -151,23 +213,26 @@
         <option value="$PROJECT_DIR$/front-managent/src/main.js" />
         <option value="$PROJECT_DIR$/front-managent/vue.config.js" />
         <option value="$PROJECT_DIR$/front-managent/src/http.js" />
-        <option value="$PROJECT_DIR$/front-managent/src/views/Main.vue" />
-        <option value="$PROJECT_DIR$/front-managent/src/App.vue" />
         <option value="$PROJECT_DIR$/front-managent/src/commonMixin.css" />
         <option value="$PROJECT_DIR$/front-managent/src/commonMixin.scss" />
-        <option value="$PROJECT_DIR$/front-managent/src/router.js" />
-        <option value="$PROJECT_DIR$/front-managent/src/views/CategoriesCreate.vue" />
         <option value="$PROJECT_DIR$/front-managent/src/views/CategoriesList.vue" />
-        <option value="$PROJECT_DIR$/front-managent/src/views/BooksCreate.vue" />
-        <option value="$PROJECT_DIR$/front-managent/src/views/BooksList.vue" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/front-managent/src/views/BooksCreate.vue" />
+        <option value="$PROJECT_DIR$/front-managent/src/views/CategoriesCreate.vue" />
+        <option value="$PROJECT_DIR$/front-managent/src/views/Main.vue" />
+        <option value="$PROJECT_DIR$/front-managent/src/css/commonMixin.scss" />
+        <option value="$PROJECT_DIR$/front-managent/src/App.vue" />
+        <option value="$PROJECT_DIR$/front-managent/src/views/BooksList.vue" />
+        <option value="$PROJECT_DIR$/front-managent/src/views/Adminlist.vue" />
+        <option value="$PROJECT_DIR$/front-managent/src/router.js" />
+        <option value="$PROJECT_DIR$/front-managent/src/views/AdminCreate.vue" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="25" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="627" />
     <option name="y" value="23" />
-    <option name="width" value="1895" />
+    <option name="width" value="1293" />
     <option name="height" value="1057" />
   </component>
   <component name="ProjectView">
@@ -264,12 +329,13 @@
       <workItem from="1566470144852" duration="6936000" />
       <workItem from="1566523845747" duration="3860000" />
       <workItem from="1566531515973" duration="6668000" />
-      <workItem from="1566606308972" duration="6942000" />
+      <workItem from="1566606308972" duration="7164000" />
+      <workItem from="1566782261269" duration="8072000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80393000" />
+    <option name="totallyTimeSpent" value="88687000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -281,7 +347,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1057" extended-state="6" />
+    <frame x="627" y="23" width="1293" height="1057" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49947312" weight="0.20625" />
@@ -360,13 +426,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-managent/src/App.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front-managent/node_modules/vue-router/dist/vue-router.esm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -376,27 +435,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/front-managent/src/css/reset.css">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front-managent/src/css/commonMixin.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front-managent/src/views/Main.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front-managent/src/router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/front-managent/node_modules/ajv/lib/dotjs/items.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -408,10 +446,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-managent/src/views/CategoriesCreate.vue">
+    <entry file="file://$PROJECT_DIR$/front-managent/src/views/Main.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-managent/src/css/commonMixin.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
-          <caret line="6" column="47" lean-forward="true" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-managent/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-managent/src/views/BooksCreate.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="34" column="23" lean-forward="true" selection-start-line="31" selection-start-column="8" selection-end-line="34" selection-end-column="23" />
+          <folding>
+            <element signature="n#el-form-item#0;n#el-form#0;n#div#0;n#div#0;n#template#0;n#!!top" />
+            <element signature="n#el-form-item#1;n#el-form#0;n#div#0;n#div#0;n#template#0;n#!!top" />
+            <element signature="n#el-form-item#2;n#el-form#0;n#div#0;n#div#0;n#template#0;n#!!top" />
+            <element signature="n#script#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="252">
+            <caret line="9" selection-start-line="9" selection-end-line="9" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-managent/src/views/CategoriesCreate.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="129" selection-start-line="129" selection-end-line="130" />
           <folding>
             <element signature="n#el-upload#0;n#el-form-item#1;n#el-form#0;n#div#0;n#div#0;n#template#0;n#!!top" />
             <element signature="e#1120#3637#0" />
@@ -443,57 +525,50 @@
             <element signature="e#3412#3463#0" />
             <element signature="e#3482#3525#0" />
             <element signature="e#3563#3635#0" />
-            <element signature="n#style#0;n#!!top" />
             <element signature="e#3720#3753#0" />
-            <element signature="e#3771#4347#0" />
-            <element signature="e#3784#4345#0" />
-            <element signature="e#3860#4285#0" />
             <element signature="e#3990#4185#0" />
-            <element signature="e#4201#4279#0" />
-            <element signature="e#4300#4341#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-managent/src/views/BooksList.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="53" column="30" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="30" />
+          <folding>
+            <element signature="n#el-table#0;n#div#0;n#template#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/front-managent/src/views/CategoriesList.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="3" column="33" lean-forward="true" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+        <state relative-caret-position="-1952">
+          <caret line="3" column="33" selection-end-line="101" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-managent/src/views/BooksList.vue">
+    <entry file="file://$PROJECT_DIR$/front-managent/src/router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="11" column="74" lean-forward="true" selection-start-line="11" selection-start-column="74" selection-end-line="11" selection-end-column="104" />
+        <state relative-caret-position="28">
+          <caret line="1" column="31" lean-forward="true" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-managent/src/views/BooksCreate.vue">
+    <entry file="file://$PROJECT_DIR$/front-managent/src/views/Adminlist.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1527">
-          <caret line="164" column="15" lean-forward="true" selection-start-line="164" selection-start-column="15" selection-end-line="164" selection-end-column="15" />
+        <state relative-caret-position="211">
+          <caret line="57" column="21" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="21" />
           <folding>
-            <element signature="n#el-form-item#0;n#el-form#0;n#div#0;n#div#0;n#template#0;n#!!top" />
-            <element signature="n#el-form-item#1;n#el-form#0;n#div#0;n#div#0;n#template#0;n#!!top" />
-            <element signature="n#el-form-item#2;n#el-form#0;n#div#0;n#div#0;n#template#0;n#!!top" />
-            <element signature="n#script#0;n#!!top" />
-            <element signature="e#2876#2913#0" />
-            <element signature="e#3007#3053#0" />
-            <element signature="e#3072#3118#0" />
-            <element signature="e#3135#3183#0" />
-            <element signature="e#4069#4494#0" />
+            <element signature="e#1081#1564#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="252">
-            <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/front-managent/src/views/AdminCreate.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="47" column="12" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
         </state>
       </provider>
     </entry>

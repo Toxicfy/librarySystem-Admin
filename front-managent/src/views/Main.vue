@@ -5,7 +5,7 @@
       <div class="logo">
         <img src="../assets/logo.png" alt="logo">
       </div>
-      <el-menu router :default-active="$route.path" :default-openeds="['内容管理']" background-color="#10131e" text-color="#cfd0d3" active-text-color="#fff">
+      <el-menu router :default-active="$route.path" :default-openeds="['内容管理','系统管理']" background-color="#10131e" text-color="#cfd0d3" active-text-color="#fff">
         <el-submenu index="内容管理">
           <template slot="title"><i class="el-icon-menu"></i><span>内容管理</span></template>
           <el-menu-item-group>
@@ -17,6 +17,14 @@
             <template slot="title">书籍信息</template>
             <el-menu-item index="/books/create">创建书籍</el-menu-item>
             <el-menu-item index="/books/list">书籍列表</el-menu-item>
+          </el-menu-item-group>
+        </el-submenu>
+        <el-submenu index="系统管理">
+          <template slot="title"><i class="el-icon-menu"></i><span>系统管理</span></template>
+          <el-menu-item-group>
+            <template slot="title">管理员</template>
+            <el-menu-item index="/admin/create">创建管理员</el-menu-item>
+            <el-menu-item index="/admin/list">管理员列表</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
       </el-menu>

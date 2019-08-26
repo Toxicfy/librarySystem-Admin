@@ -18,4 +18,7 @@ export default {
   .el-menu-item-group__title{
     margin-bottom: 10px;
   }
+  .el-form-item__label{
+    width: 100px;
+  }
 </style>

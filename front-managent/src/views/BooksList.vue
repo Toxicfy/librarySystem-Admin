@@ -5,7 +5,7 @@
       <el-table-column prop="_id" label="书籍ID" align="center" width="220"></el-table-column>
       <el-table-column prop="fileName" label="名称" align="center"></el-table-column>
       <el-table-column label="书籍封面" align="center" prop="coverImg" >
-        <template   slot-scope="data">
+        <template slot-scope="data">
           <img :src="data.row.coverImg"  min-width="70" height="70" alt="coverImg"/>
         </template>
       </el-table-column>

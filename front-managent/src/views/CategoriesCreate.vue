@@ -146,8 +146,8 @@ export default {
       }
 
       .avatar {
-        width: 178px;
-        height: 178px;
+        width: 160px;
+        height: 190px;
         display: block;
       }
     }

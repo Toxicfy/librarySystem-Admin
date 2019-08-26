@@ -18,7 +18,11 @@ export default new Router({
         // book
         { path: '/books/create', component: () => import('./views/BooksCreate.vue') },
         { path: '/books/list', component: () => import('./views/BooksList.vue') },
-        { path: '/books/edit/:id', component: () => import('./views/BooksCreate.vue'), props: true }
+        { path: '/books/edit/:id', component: () => import('./views/BooksCreate.vue'), props: true },
+        //  admin
+        { path: '/admin/create', component: () => import('./views/AdminCreate.vue') },
+        { path: '/admin/list', component: () => import('./views/Adminlist.vue') },
+        { path: '/admin/edit/:id', component: () => import('./views/AdminCreate.vue'), props: true }
       ]
     }
   ]

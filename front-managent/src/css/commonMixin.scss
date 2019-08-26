@@ -3,3 +3,7 @@
     width: $width;
     min-width: $minWidth;
 }
+
+@mixin pageTitle(){
+  text-decoration: underline;
+}
