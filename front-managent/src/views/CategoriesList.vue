@@ -16,6 +16,8 @@
 </template>
 
 <script>
+import { notify } from '../utils/index'
+
 export default {
   name: 'categoriesList',
   data () {
@@ -48,7 +50,7 @@ export default {
           .then(res => {
             console.log(res.data)
             if (res.data.err_code === 0) {
-              this.$message({ type: 'success', message: res.data.msg })
+              notify(this, res.data.msg)
               this.getCategories()
             }
           })

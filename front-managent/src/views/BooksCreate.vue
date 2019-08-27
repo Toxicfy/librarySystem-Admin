@@ -39,6 +39,8 @@
 </template>
 
 <script>
+import { notify } from '../utils'
+
 export default {
   name: 'Books',
   props: {
@@ -76,7 +78,7 @@ export default {
       if (this.id) {
         this.$http.post('/book/edit', this.bookData).then(res => {
           if (res.data.err_code === 0) {
-            this.$message({ type: 'success', message: res.data.msg })
+            notify(this, res.data.msg)
             this.$router.push('/books/list')
           }
         })
@@ -85,7 +87,7 @@ export default {
       // 新建
       this.$http.post('/book/create', this.bookData).then(res => {
         if (res.data.err_code === 0) {
-          this.$message({ type: 'success', message: res.data.msg })
+          notify(this, res.data.msg)
           this.$router.push('/books/list')
         }
       })
@@ -95,11 +97,11 @@ export default {
       this.$http.get('/book/detail', { params: { id: this.id } }).then(res => {
         this.bookData = res.data.data
         this.bookData.categoryId = res.data.data.categoryId._id
-        console.log(this.bookData.categoryId)
       })
     },
     // 取消编辑
     cancelEdit () {
+      notify(this, '取消编辑书籍')
       this.$router.push('/books/list')
     },
     // 图片上传完成
@@ -130,20 +132,12 @@ export default {
       .el-form {
         @include widthAndMinWidth(60%, 500px);
 
-        .el-input {
+        .el-input, .el-textarea, .el-select{
           @include widthAndMinWidth();
-        }
-
-        .el-textarea {
-          @include widthAndMinWidth();
-        }
-
-        .el-select {
-          @include widthAndMinWidth()
         }
 
         .rank-container {
-          .rank-text{
+          .rank-text {
             margin-left: 20px;
             font-size: 16px;
             font-style: italic;
@@ -151,7 +145,7 @@ export default {
           .el-rate {
             line-height: 50px;
             float: left;
-
+            @include widthAndMinWidth();
             .el-rate__icon {
               font-size: 24px !important;
             }
@@ -159,14 +153,16 @@ export default {
         }
       }
     }
-    .upload-img,.btn-group{
+
+    .upload-img, .btn-group {
       @include widthAndMinWidth(60%, 550px)
     }
-    .btn-group{
+
+    .btn-group {
       margin-left: 100px;
     }
 
-      /* avatar */
+    /* avatar */
     .el-upload {
       @include widthAndMinWidth(60%, 500px);
       border-radius: 6px;

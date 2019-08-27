@@ -21,4 +21,17 @@ export default {
   .el-form-item__label{
     width: 100px;
   }
+  .el-notification{
+    background: #303133 !important;
+    .el-notification__title{
+      font-size: 15px;
+      color: #ffffff;
+      line-height: 28px;
+    }
+  }
+  // global
+  html,body,#app{
+    height: 100%;
+    width: 100%;
+  }
 </style>

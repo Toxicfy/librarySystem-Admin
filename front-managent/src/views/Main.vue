@@ -22,9 +22,9 @@
         <el-submenu index="系统管理">
           <template slot="title"><i class="el-icon-menu"></i><span>系统管理</span></template>
           <el-menu-item-group>
-            <template slot="title">管理员</template>
-            <el-menu-item index="/admin/create">创建管理员</el-menu-item>
-            <el-menu-item index="/admin/list">管理员列表</el-menu-item>
+            <template slot="title">用户</template>
+            <el-menu-item index="/admin/create">创建用户</el-menu-item>
+            <el-menu-item index="/admin/list">用户列表</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
       </el-menu>

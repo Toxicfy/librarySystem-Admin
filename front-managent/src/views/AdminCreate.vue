@@ -1,11 +1,11 @@
 <template>
   <div class="admin-create">
-    <h2 class="title">创建管理员</h2>
-    <el-form  @submit.native.prevent="saveAdminUserInfo" :model="adminInfo">
-      <el-form-item label="用户名" prop="name">
+    <h2 class="title">创建用户</h2>
+    <el-form  @submit.native.prevent="saveAdminUserInfo('adminForm')" ref="adminForm" :model="adminInfo" :rules="rules">
+      <el-form-item label="用户名" prop="username" label-width="100px">
         <el-input v-model="adminInfo.username"></el-input>
       </el-form-item>
-      <el-form-item label="密码" prop="password" v-if="!this.id">
+      <el-form-item label="密码" prop="password" v-if="!this.id" label-width="100px">
         <el-input type="password" v-model="adminInfo.password"></el-input>
       </el-form-item>
       <el-form-item class="btn-group">
@@ -17,16 +17,26 @@
 </template>
 
 <script>
+import { notify } from '../utils/index'
+
 export default {
   name: 'AdminCreate',
   props: {
     id: { type: String }
   },
   data () {
+    const usernameValidator = (rule, value, callback) => {
+      value === ''
+        ? callback(new Error('请Î输入用户名后提交'))
+        : callback()
+    }
     return {
       adminInfo: {
         name: '',
         password: ''
+      },
+      rules: {
+        username: [{ validator: usernameValidator, trigger: 'blur' }]
       }
     }
   },
@@ -35,19 +45,23 @@ export default {
   },
   methods: {
     // （创建-修改）保存用户信息
-    saveAdminUserInfo () {
-      const URL = this.id ? '/admin_user/update' : '/admin_user/create'
-      this.$http.post(URL, this.adminInfo)
-        .then(res => {
-          if (res.data.err_code === 0) {
-            this.$message({ type: 'success', message: res.data.msg })
-            this.$router.push('/admin/list')
-          }
-        })
+    saveAdminUserInfo (formName) {
+      this.$refs[formName].validate(res => {
+        if (res) {
+          const URL = this.id ? '/user/update' : '/user/create'
+          this.$http.post(URL, this.adminInfo)
+            .then(res => {
+              if (res.data.err_code === 0) {
+                notify(this, res.data.msg)
+                this.$router.push('/admin/list')
+              }
+            })
+        }
+      })
     },
-    // 获取管理员数据
+    // 获取用户数据
     getAdminItemInfo () {
-      this.$http.get('/admin_user/detail', { params: { id: this.id } }).then(res => {
+      this.$http.get('/user/detail', { params: { id: this.id } }).then(res => {
         const data = res.data
         if (data.err_code === 0) {
           this.adminInfo = data.data
@@ -56,7 +70,7 @@ export default {
     },
     // 取消编辑
     cancelEdit () {
-      this.$message({ type: 'info', message: '编辑已取消' })
+      notify(this, '编辑用户已取消')
       this.$router.push('/admin/list')
     }
   }

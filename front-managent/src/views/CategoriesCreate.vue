@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import { notify } from '../utils/index'
 export default {
   name: 'categoriesCreate',
   props: {
@@ -68,7 +69,7 @@ export default {
           if (this.id) {
             this.$http.post('/category/update', this.categoryData).then(res => {
               if (res.data) {
-                this.$message({ type: 'success', message: res.data.msg })
+                notify(this, res.data.msg)
                 this.categoryData = this.originalValue.categoryData
                 this.$refs[formName].resetFields()
                 this.$router.push('/categories/list')
@@ -78,7 +79,7 @@ export default {
             this.$http.post('/category/create', this.categoryData)
               .then(res => {
                 if (res.data) {
-                  this.$message({ type: 'success', message: res.data.msg })
+                  notify(this, res.data.msg)
                   this.categoryData = this.originalValue.categoryData
                   this.$refs[formName].resetFields()
                   this.$router.push('/categories/list')
@@ -106,6 +107,7 @@ export default {
     },
     // 取消修改分类信息
     cancelModifyCategory () {
+      notify(this, '取消修改分类')
       this.$router.push('/categories/list')
     }
   },

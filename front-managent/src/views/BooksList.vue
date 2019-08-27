@@ -3,7 +3,7 @@
     <h2 class="title">书籍列表</h2>
     <el-table :data="bookList" border>
       <el-table-column prop="_id" label="书籍ID" align="center" width="220"></el-table-column>
-      <el-table-column prop="fileName" label="名称" align="center"></el-table-column>
+      <el-table-column prop="fileName" label="名称" align="center" width="240"  :show-overflow-tooltip="true"></el-table-column>
       <el-table-column label="书籍封面" align="center" prop="coverImg" >
         <template slot-scope="data">
           <img :src="data.row.coverImg"  min-width="70" height="70" alt="coverImg"/>
@@ -12,7 +12,7 @@
       <el-table-column prop="author" label="作者" align="center" width='220' :show-overflow-tooltip='true'></el-table-column>
       <el-table-column prop="rank" label="书籍评分" align="center" ></el-table-column>
       <el-table-column prop="categoryId.name" label="分类名称" align="center"> </el-table-column>
-      <el-table-column  label="操作" align="center">
+      <el-table-column  label="操作" align="center" width="200">
         <template slot-scope="data">
           <el-button type="info" @click="editBookItem(data.row)">编辑</el-button>
           <el-button type="danger" @click="delBookItem(data.row)">删除</el-button>
@@ -23,6 +23,8 @@
 </template>
 
 <script>
+import { notify } from '../utils/index'
+
 export default {
   data () {
     return {
@@ -53,7 +55,7 @@ export default {
       }).then(() => {
         this.$http.post('/book/del', { id: data._id }).then(res => {
           if (res.data.err_code === 0) {
-            this.$message({ type: 'success', message: res.data.msg })
+            notify(this, res.data.msg)
           }
           this.getBookList()
         })
