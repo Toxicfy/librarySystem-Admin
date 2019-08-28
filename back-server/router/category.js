@@ -5,6 +5,7 @@ const { koaBodyConfig, successModel } = require('../util/common')
 // 数据表对象（基于此对象 - 增删改查）
 const Category = require('../models/category')
 const imgConfig = koaBodyConfig('../static/upload/category')
+
 // 创建图书分类
 router.post('/create', koaBody(), async ctx => {
   let postData = ctx.request.body

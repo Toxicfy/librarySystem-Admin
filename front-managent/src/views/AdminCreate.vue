@@ -27,7 +27,7 @@ export default {
   data () {
     const usernameValidator = (rule, value, callback) => {
       value === ''
-        ? callback(new Error('请Î输入用户名后提交'))
+        ? callback(new Error('请输入用户名后提交'))
         : callback()
     }
     return {

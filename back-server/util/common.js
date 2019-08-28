@@ -24,8 +24,12 @@ const successModel = (data, msg, err_code = 0) => {
     msg
   }
 }
+const errorModel = (msg, err_code = 1) => {
+  return { msg, err_code }
+}
 
 module.exports = {
   koaBodyConfig,
-  successModel
+  successModel,
+  errorModel
 }
