@@ -31,5 +31,6 @@ const errorModel = (msg, err_code = 1) => {
 module.exports = {
   koaBodyConfig,
   successModel,
-  errorModel
+  errorModel,
+  privateKey: 'libraryManagement'
 }

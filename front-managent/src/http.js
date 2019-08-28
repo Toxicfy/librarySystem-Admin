@@ -30,9 +30,10 @@ http.interceptors.response.use(
     const { response } = error
     response.data.msg && notify(Vue.prototype, response.data.msg, 'info')
     if (response.status === 401) {
+      localStorage.clear()
       router.push('/login')
     }
-    return new Promise(response)
+    return Promise.reject(response)
   }
 )
 
