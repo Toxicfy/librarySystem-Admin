@@ -46,7 +46,7 @@ router.beforeEach((to, from, next) => {
     if (token) {
       next()
     } else {
-      notify(Vue.prototype, '用户授权无效，请重新登录', 'info')
+      // notify(Vue.prototype, '用户授权无效，请重新登录', 'info')
       router.push('/login')
     }
   }

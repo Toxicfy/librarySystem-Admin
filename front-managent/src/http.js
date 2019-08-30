@@ -28,10 +28,16 @@ http.interceptors.response.use(
   },
   error => {
     const { response } = error
-    response.data.msg && notify(Vue.prototype, response.data.msg, 'info')
     if (response.status === 401) {
       localStorage.clear()
       router.push('/login')
+    }
+    if (response.status === 500 && response.data.msg === 'jwt malformed') {
+      notify(Vue.prototype, '无效的token,请重新登录', 'info')
+      localStorage.clear()
+      router.push('/login')
+    } else {
+      response.data.msg && notify(Vue.prototype, response.data.msg, 'info')
     }
     return Promise.reject(response)
   }
