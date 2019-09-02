@@ -24,7 +24,9 @@ const router = new Router({
         //  admin
         { path: '/admin/create', component: () => import('./views/AdminCreate.vue') },
         { path: '/admin/list', component: () => import('./views/AdminList.vue') },
-        { path: '/admin/edit/:id', component: () => import('./views/AdminCreate.vue'), props: true }
+        { path: '/admin/edit/:id', component: () => import('./views/AdminCreate.vue'), props: true },
+        //  bookShelf
+        { path: '/bookShelf', component: () => import('./views/bookShelf.vue') }
       ]
     },
     {

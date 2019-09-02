@@ -17,17 +17,17 @@ module.exports = async (ctx, next) => {
     const token = String(ctx.request.headers.authorization || '')
       .split(' ')
       .pop()
-      ctx.assert(token, authErrorStatus, ERROR_MESSAGE[authErrorStatus])
-      
-      const { id, time } = await jwt.verify(token, privateKey);
-      console.log(time)
-      ctx.assert(
+    ctx.assert(token, authErrorStatus, ERROR_MESSAGE[authErrorStatus])
+
+    const { id, time } = await jwt.verify(token, privateKey)
+    ctx.assert(
       Date.now() - time < 1000 * 60 * 60,
       authErrorStatus,
       ERROR_MESSAGE[authErrorStatus]
     )
     const userModel = await AdminUser.findById(id)
     ctx.assert(userModel, authErrorStatus, ERROR_MESSAGE[authErrorStatus])
+    ctx.currentId = id
     await next()
   }
 }

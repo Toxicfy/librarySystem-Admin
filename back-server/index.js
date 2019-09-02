@@ -20,7 +20,7 @@ app.use(async (ctx, next) => {
 })
 
 app.on('error', err => {
-  console.log(err)
+  // console.log(err)
 })
 
 // 实现静态资源服务
@@ -31,8 +31,6 @@ app.use(static(path.join(__dirname, staticPath)))
 const cors = require('koa2-cors')
 app.use(cors())
 
-// token 验证中间件
-// app.use(auth)
 
 // 加载路由中间件
 const router = require('./router/index')

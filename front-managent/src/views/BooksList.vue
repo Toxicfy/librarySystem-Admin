@@ -12,8 +12,9 @@
       <el-table-column prop="author" label="作者" align="center" width='220' :show-overflow-tooltip='true'></el-table-column>
       <el-table-column prop="rank" label="书籍评分" align="center" ></el-table-column>
       <el-table-column prop="categoryId.name" label="分类名称" align="center"> </el-table-column>
-      <el-table-column  label="操作" align="center" width="200">
+      <el-table-column  label="操作" align="center" width="300">
         <template slot-scope="data">
+          <el-button type="warning" @click="addToBookShelf(data.row)">加入书架</el-button>
           <el-button type="info" @click="editBookItem(data.row)">编辑</el-button>
           <el-button type="danger" @click="delBookItem(data.row)">删除</el-button>
         </template>
@@ -59,6 +60,14 @@ export default {
           }
           this.getBookList()
         })
+      })
+    },
+    // 添加书籍到书架
+    addToBookShelf (data) {
+      this.$http.post('/user/addShelf', { id: data._id }).then(res => {
+        if (res.data.err_code === 0) {
+          notify(this, res.data.msg)
+        }
       })
     }
   }

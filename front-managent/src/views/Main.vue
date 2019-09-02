@@ -26,6 +26,10 @@
             <el-menu-item index="/admin/create">创建用户</el-menu-item>
             <el-menu-item index="/admin/list">用户列表</el-menu-item>
           </el-menu-item-group>
+          <el-menu-item-group>
+            <template slot="title">书架</template>
+            <el-menu-item index="/bookShelf">我的书架</el-menu-item>
+          </el-menu-item-group>
         </el-submenu>
       </el-menu>
     </el-aside>

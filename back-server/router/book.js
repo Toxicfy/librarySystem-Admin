@@ -27,7 +27,6 @@ router.post('/create', koaBody(), async ctx => {
 // 书籍信息查询
 router.get('/detail', async ctx => {
   const { id } = ctx.query
-  console.log(ctx.request)
   const model = await Book.findById(id).populate('categoryId')
   ctx.body = successModel(model, '书籍数据查询成功')
 })

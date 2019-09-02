@@ -51,8 +51,8 @@ export default {
           const URL = this.id ? '/user/update' : '/user/create'
           this.$http.post(URL, this.adminInfo)
             .then(res => {
+              notify(this, res.data.msg)
               if (res.data.err_code === 0) {
-                notify(this, res.data.msg)
                 this.$router.push('/admin/list')
               }
             })

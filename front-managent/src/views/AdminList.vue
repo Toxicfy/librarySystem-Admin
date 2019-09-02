@@ -5,6 +5,7 @@
     <el-table :data="adminInfo" border>
       <el-table-column prop="_id" label="用户ID" align="center" width="220"></el-table-column>
       <el-table-column prop="username" label="用户名称" align="center"> </el-table-column>
+      <el-table-column prop="bookshelf.length" label="在读书籍" align="center"></el-table-column>
       <el-table-column  label="操作" align="center">
         <template slot-scope="data">
           <el-button type="info" @click="editAdminUserItem(data.row)">编辑</el-button>

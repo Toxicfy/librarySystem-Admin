@@ -18,7 +18,6 @@ router.post('/uploadImg', koaBody(imgConfig), async ctx => {
   const fileInfo = ctx.request.files.file
   const name = fileInfo.path.split('/').pop()
   const url = `http://localhost:3000/upload/category/${name}`
-  console.log(fileInfo.path.split('/').pop())
   ctx.body = successModel({ url, fileInfo }, '上传图片成功')
 })
 
