@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Main from './views/Main.vue'
 import Login from './views/Login.vue'
-import { notify } from './utils'
 
 Vue.use(Router)
 
@@ -10,6 +9,7 @@ const router = new Router({
   routes: [
     {
       path: '/',
+      redirect: '/bookShelf',
       name: 'main',
       component: Main,
       children: [

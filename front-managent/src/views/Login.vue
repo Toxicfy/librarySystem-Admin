@@ -54,6 +54,7 @@ export default {
               const data = res.data
               if (data.err_code === 0) {
                 window.localStorage.setItem('token', data.data.token)
+                window.localStorage.setItem('currentUsername', data.data.name)
                 this.$router.push('/')
                 notify(this, `登录成功，欢迎 ${data.data.name}`)
               }

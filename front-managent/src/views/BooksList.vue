@@ -14,7 +14,8 @@
       <el-table-column prop="categoryId.name" label="分类名称" align="center"> </el-table-column>
       <el-table-column  label="操作" align="center" width="300">
         <template slot-scope="data">
-          <el-button type="warning" @click="addToBookShelf(data.row)">加入书架</el-button>
+          <el-button type="warning" @click="addToBookShelf(data.row)" v-if="(!data.row.isShelf)">加入书架</el-button>
+          <el-button type="success" v-else>已在书架</el-button>
           <el-button type="info" @click="editBookItem(data.row)">编辑</el-button>
           <el-button type="danger" @click="delBookItem(data.row)">删除</el-button>
         </template>
@@ -25,6 +26,7 @@
 
 <script>
 import { notify } from '../utils/index'
+import axios from 'axios'
 
 export default {
   data () {
@@ -38,9 +40,21 @@ export default {
   methods: {
     // 获取图书列表
     getBookList () {
-      this.$http('/book/list').then(res => {
-        this.bookList = res.data.data
-      })
+      const bookRequest = this.$http('/book/list')
+      const shelfRequest = this.$http('/user/shelf')
+      axios.all([bookRequest, shelfRequest])
+        .then(axios.spread((bookData, shelfData) => {
+          let shelfIdArr = []
+          shelfData.data.data.bookshelf.forEach(ele => {
+            shelfIdArr.push(ele._id)
+          })
+          bookData.data.data.forEach(ele => {
+            if (shelfIdArr.indexOf(ele._id) > -1) {
+              ele.isShelf = true
+            }
+          })
+          this.bookList = bookData.data.data
+        }))
     },
     // 编辑单个书籍信息
     editBookItem (data) {
@@ -68,6 +82,7 @@ export default {
         if (res.data.err_code === 0) {
           notify(this, res.data.msg)
         }
+        this.getBookList();
       })
     }
   }

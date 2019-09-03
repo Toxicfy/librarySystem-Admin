@@ -17,34 +17,34 @@ router.post('/create', koaBody(), async (ctx, next) => {
   }
 })
 
-// 删除
+// 删除用户
 router.post('/del', koaBody(), async ctx => {
   const _id = ctx.request.body.id
   const model = await AdminUser.findOneAndRemove({ _id })
   ctx.body = successModel(model, '删除用户成功')
 })
 
-// 获取用户用户列表
+// 获取用户列表
 router.get('/list', async ctx => {
   const model = await AdminUser.find().populate('bookshelf')
   ctx.body = successModel(model, '用户数据查询成功')
 })
 
-// 获取用户信息
+// 获取单个用户信息
 router.get('/detail', async ctx => {
   const { id } = ctx.request.query
   const model = await AdminUser.findById(id)
   ctx.body = successModel(model, '用户数据查询成功')
 })
 
-// 更新用户姓名
+// 更新单个用户姓名
 router.post('/update', koaBody(), async ctx => {
   let postData = ctx.request.body
   const model = await AdminUser.findByIdAndUpdate(postData._id, postData)
   ctx.body = successModel(model, '更新用户数据成功')
 })
 
-// 获取用户的书架
+// 获取当前用户的书架
 router.get('/shelf', async ctx => {
   const model = await AdminUser.findById(ctx.currentId, {
     bookshelf: 1
@@ -52,7 +52,7 @@ router.get('/shelf', async ctx => {
   ctx.body = successModel(model, '获取个人书架信息成功')
 })
 
-// 添加书籍
+// 当前用户添加书籍
 router.post('/addShelf', koaBody(), async ctx => {
   const { id } = ctx.request.body
   const model = await AdminUser.findByIdAndUpdate(
@@ -63,7 +63,7 @@ router.post('/addShelf', koaBody(), async ctx => {
   ctx.body = successModel(model, '书籍已添加到书架')
 })
 
-// 书架删除书籍
+// 当前用户删除书籍
 router.post('/removeShelf', koaBody(), async ctx => {
   const { id } = ctx.request.body
   const model = await AdminUser.findByIdAndUpdate(ctx.currentId, {

@@ -1,7 +1,7 @@
 <!--CategoriesCreate.vue-->
 <template>
   <div id="book-shelf">
-    <h2 class="title">个人书架</h2>
+    <h2 class="title">我的书架</h2>
     <div class="books-list">
       <el-card v-for="(item,index) in bookshelfData" :key="index">
         <div class="description"><span>{{item.name}}</span></div>

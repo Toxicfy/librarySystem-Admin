@@ -36,7 +36,16 @@
     <!-- 主体部分 -->
     <el-main>
       <!--  header  -->
-      <div class="main-header"></div>
+      <div class="main-header">
+        <el-header style="text-align: right;">
+          <el-dropdown>
+            <span class="username"><i class="el-icon-s-custom"></i>{{username}}</span>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item @click.native="loginOut">退出登录</el-dropdown-item>
+            </el-dropdown-menu>
+          </el-dropdown>
+        </el-header>
+      </div>
       <!--  路由区域  -->
       <router-view class="main-content"></router-view>
     </el-main>
@@ -47,58 +56,78 @@
 export default {
   name: 'Main',
   data () {
-    return {}
+    return {
+      username: localStorage.getItem('currentUsername')
+    }
+  },
+  methods: {
+    loginOut () {
+      window.localStorage.clear()
+      this.$router.push('/login')
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-  .el-container{
-    .el-aside{
-      overflow: hidden;
-      .logo{
-        width: 239px;
-        height: 90px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-sizing: border-box;
-        background-color: #10131e;
-        img{
-          width: 138px;
-          height: 75px;
+.el-container {
+  .el-aside {
+    overflow: hidden;
+    .logo {
+      width: 239px;
+      height: 90px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      background-color: #10131e;
+      img {
+        width: 138px;
+        height: 75px;
+      }
+    }
+    width: 240px !important;
+    height: 100vh;
+    .el-menu {
+      height: calc(100% - 80px);
+    }
+  }
+}
+/*设置单个选中样式*/
+.el-menu-item-group {
+  .el-menu-item {
+    text-align: left;
+    margin: 0 10%;
+    padding-left: 24px;
+    border-radius: 8px;
+  }
+  .is-active {
+    background: #0364ff !important;
+  }
+}
+
+.el-main {
+  padding: 0;
+  background: #f9f9fb;
+  .main-header {
+    background: #ffffff;
+    height: 90px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.4);
+    line-height: 90px;
+    .el-header {
+      height: 90px !important;
+      .el-dropdown {
+        font-size: 16px;
+        cursor: pointer;
+        margin-right: 36px;
+        .el-icon-s-custom {
+          margin-right: 10px;
         }
       }
-      width: 240px !important;
-      height: 100vh;
-      .el-menu{
-        height: calc(100% - 80px);
-      }
     }
   }
-  /*设置单个选中样式*/
-  .el-menu-item-group{
-    .el-menu-item{
-      text-align: left;
-      margin: 0 10%;
-      padding-left: 24px;
-      border-radius: 8px;
-    }
-    .is-active{
-      background: #0364ff !important;
-    }
+  .main-content {
+    padding: 20px;
   }
-
-  .el-main{
-    padding: 0;
-    background: #f9f9fb;
-    .main-header{
-      background: #ffffff;
-      height: 90px;
-      box-shadow: 0 0 7px rgba(0,0,0,0.4);
-    }
-    .main-content{
-      padding: 20px;
-    }
-  }
+}
 </style>
