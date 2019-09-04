@@ -3,12 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5ee8d5ed-c0fa-4f15-8af6-79951881d825" name="默认更改列表" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-server/router/adminUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-server/router/adminUser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-managent/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-managent/src/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-managent/src/views/BooksList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-managent/src/views/BooksList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-managent/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-managent/src/views/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-managent/src/views/Main.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-managent/src/views/Main.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-managent/src/views/bookShelf.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-managent/src/views/bookShelf.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-server/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-server/router/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-server/router/book.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-server/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-server/router/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,7 +25,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front-managent/src/router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="821">
+            <state relative-caret-position="936">
               <caret line="42" column="12" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
@@ -39,8 +37,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front-managent/src/views/Main.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="119" column="24" lean-forward="true" selection-start-line="119" selection-start-column="24" selection-end-line="119" selection-end-column="24" />
+            <state relative-caret-position="1824">
+              <caret line="102" column="3" selection-start-line="102" selection-start-column="3" selection-end-line="102" selection-end-column="3" />
               <folding>
                 <element signature="n#el-menu#0;n#el-aside#0;n#el-container#0;n#template#0;n#!!top" />
                 <element signature="n#style#0;n#el-header#0;n#div#0;n#el-main#0;n#el-container#0;n#template#0;n#!!top" expanded="true" />
@@ -52,21 +50,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front-managent/src/views/AdminCreate.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+            <state relative-caret-position="-582">
+              <caret line="16" column="11" lean-forward="true" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="288">
+                <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front-managent/src/views/BooksList.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="763">
-              <caret line="85" selection-start-line="85" selection-end-line="85" />
+            <state relative-caret-position="1848">
+              <caret line="82" column="36" selection-start-line="82" selection-start-column="36" selection-end-line="82" selection-end-column="36" />
               <folding>
                 <element signature="n#el-table-column#2;n#el-table#0;n#div#0;n#template#0;n#!!top" />
                 <element signature="n#template#0;n#el-table-column#2;n#el-table#0;n#div#0;n#template#0;n#!!top" />
-                <element signature="e#1328#1367#0" expanded="true" />
                 <element signature="n#style#0;n#!!top" />
               </folding>
             </state>
@@ -142,20 +151,20 @@
         <option value="$PROJECT_DIR$/back-server/router/login.js" />
         <option value="$PROJECT_DIR$/front-managent/src/http.js" />
         <option value="$PROJECT_DIR$/front-managent/src/views/AdminCreate.vue" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/front-managent/src/views/bookShelf.vue" />
         <option value="$PROJECT_DIR$/front-managent/src/views/AdminList.vue" />
         <option value="$PROJECT_DIR$/front-managent/src/router.js" />
         <option value="$PROJECT_DIR$/front-managent/src/views/Login.vue" />
-        <option value="$PROJECT_DIR$/front-managent/src/views/Main.vue" />
         <option value="$PROJECT_DIR$/front-managent/src/views/BooksList.vue" />
+        <option value="$PROJECT_DIR$/front-managent/src/views/Main.vue" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="99" />
-    <option name="y" value="42" />
-    <option name="width" value="1320" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="23" />
+    <option name="y" value="23" />
+    <option name="width" value="1897" />
     <option name="height" value="1057" />
   </component>
   <component name="ProjectView">
@@ -173,20 +182,18 @@
             <path>
               <item name="librarySystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="librarySystem" type="462c0819:PsiDirectoryNode" />
-              <item name="front-managent" type="462c0819:PsiDirectoryNode" />
+              <item name="back-server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="librarySystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="librarySystem" type="462c0819:PsiDirectoryNode" />
+              <item name="back-server" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="librarySystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="librarySystem" type="462c0819:PsiDirectoryNode" />
               <item name="front-managent" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="librarySystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="librarySystem" type="462c0819:PsiDirectoryNode" />
-              <item name="front-managent" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -209,7 +216,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -265,12 +272,15 @@
       <workItem from="1567127278722" duration="6676000" />
       <workItem from="1567208454682" duration="360000" />
       <workItem from="1567388104195" duration="4674000" />
-      <workItem from="1567472858205" duration="5125000" />
+      <workItem from="1567472858205" duration="6638000" />
+      <workItem from="1567491664883" duration="3150000" />
+      <workItem from="1567515275830" duration="526000" />
+      <workItem from="1567559614485" duration="2000000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135970000" />
+    <option name="totallyTimeSpent" value="143159000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -282,10 +292,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="99" y="42" width="1320" height="1057" extended-state="0" />
+    <frame x="0" y="23" width="1920" height="1057" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49947312" weight="0.15454546" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49947312" visible="true" weight="0.15429173" />
       <window_info id="Structure" order="1" sideWeight="0.50052685" side_tool="true" weight="0.24962999" />
       <window_info id="Favorites" order="2" sideWeight="0.50052685" side_tool="true" weight="0.24962999" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -298,34 +308,13 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="GraphQL" order="8" weight="0.32982087" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.2565923" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4997367" visible="true" weight="0.25477707" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5002633" side_tool="true" weight="0.25595856" />
       <window_info anchor="bottom" id="调试" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49947312" visible="true" weight="0.15454546" />
-      <window_info id="Structure" order="1" sideWeight="0.50052685" side_tool="true" weight="0.24962999" />
-      <window_info id="Favorites" order="2" sideWeight="0.50052685" side_tool="true" weight="0.24962999" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32982087" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="GraphQL" order="8" weight="0.32982087" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.2565923" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="调试" order="12" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -486,26 +475,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="476">
-            <caret line="17" column="47" lean-forward="true" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front-managent/src/router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="821">
-          <caret line="42" column="12" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front-managent/src/views/Login.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="339">
@@ -547,10 +516,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/front-managent/src/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="936">
+          <caret line="42" column="12" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/front-managent/src/views/Main.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="119" column="24" lean-forward="true" selection-start-line="119" selection-start-column="24" selection-end-line="119" selection-end-column="24" />
+        <state relative-caret-position="1824">
+          <caret line="102" column="3" selection-start-line="102" selection-start-column="3" selection-end-line="102" selection-end-column="3" />
           <folding>
             <element signature="n#el-menu#0;n#el-aside#0;n#el-container#0;n#template#0;n#!!top" />
             <element signature="n#style#0;n#el-header#0;n#div#0;n#el-main#0;n#el-container#0;n#template#0;n#!!top" expanded="true" />
@@ -558,25 +537,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-managent/src/views/AdminCreate.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front-managent/src/views/BooksList.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="763">
-          <caret line="85" selection-start-line="85" selection-end-line="85" />
+        <state relative-caret-position="1848">
+          <caret line="82" column="36" selection-start-line="82" selection-start-column="36" selection-end-line="82" selection-end-column="36" />
           <folding>
             <element signature="n#el-table-column#2;n#el-table#0;n#div#0;n#template#0;n#!!top" />
             <element signature="n#template#0;n#el-table-column#2;n#el-table#0;n#div#0;n#template#0;n#!!top" />
-            <element signature="e#1328#1367#0" expanded="true" />
             <element signature="n#style#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/front-managent/src/views/AdminCreate.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-582">
+          <caret line="16" column="11" lean-forward="true" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="288">
+            <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
