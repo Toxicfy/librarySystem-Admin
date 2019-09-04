@@ -2,7 +2,6 @@ const Koa = require('koa')
 const path = require('path')
 const static = require('koa-static')
 const app = new Koa()
-// const auth = require('./util/auth')
 const { errorModel } = require('./util/common.js')
 
 // 数据库
@@ -31,11 +30,9 @@ app.use(static(path.join(__dirname, staticPath)))
 const cors = require('koa2-cors')
 app.use(cors())
 
-
 // 加载路由中间件
 const router = require('./router/index')
 app.use(router.routes()).use(router.allowedMethods())
-
 
 app.listen(3000, () => {
   console.log('listen at port:' + 'http://localhost:3000')

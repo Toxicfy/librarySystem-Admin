@@ -2,7 +2,7 @@ const router = require('koa-router')()
 const koaBody = require('koa-body')
 const fs = require('fs')
 const path = require('path')
-const { successModel, koaBodyConfig } = require('../util/common')
+const { successModel, koaBodyConfig, errorModel } = require('../util/common')
 
 // mongodb model
 const Book = require('../models/book')
@@ -57,6 +57,17 @@ router.post('/edit', koaBody(), async ctx => {
   const postData = ctx.request.body
   const model = await Book.findByIdAndUpdate(postData._id, postData)
   ctx.body = successModel(model, '更新数据成功')
+})
+
+// 根据分类查询当前分类下所有图书
+router.get('/filterByCategory', async ctx => {
+  const categoryId = ctx.query.id
+  if (categoryId) {
+    const model = await Book.find({ categoryId: categoryId })
+    ctx.body = successModel(model, '该分类书籍获取成功')
+  } else {
+    ctx.body = errorModel('获取分类失败')
+  }
 })
 
 module.exports = router
